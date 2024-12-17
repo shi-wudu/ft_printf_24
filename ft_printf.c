@@ -6,7 +6,7 @@
 /*   By: marleand <marleand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 17:07:15 by marleand          #+#    #+#             */
-/*   Updated: 2024/12/11 17:02:52 by marleand         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:29:23 by marleand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ static int check(const char *str, va_list args)
 		return (ft_putnbr(va_arg(args, int)));
 	if (*str == 'u')
 		return (ft_putunsign(va_arg(args, unsigned int)));
-/* 	if (*str == 'x')
-		return (ft_hx(???));
+ 	if (*str == 'x')
+		return (ft_hexa(va_arg(args, unsigned int), "0123456789abcdef"));
 	if (*str == 'X')
-		return (ft_hx(???));
+		return (ft_hexa(va_arg(args, unsigned int), "0123456789ABCDEF"));
 	else if(*str == 'p')
-		return(ft_putstr("0x") + ) */
+        return (ft_putstr("0x") + ft_hexa(va_arg(args, unsigned long), "0123456789abcdef"));
 	else
 		return (0);
 }
@@ -58,3 +58,59 @@ int ft_printf(const char *str, ...)
 	va_end(args);
 	return (count);
 }
+
+/*#include "ft_printf.h"
+#include <stdio.h>
+
+int main(void)
+{
+    int     len1, len2;
+    char    c = 'A';
+    char    *str = "Hello, 42!";
+    int     num = -12345;
+    unsigned int u_num = 4294967295;
+    unsigned int hex = 255;
+    void    *ptr = &num;
+
+    //Character
+    len1 = ft_printf("Character: %c\n", c);
+    len2 = printf("Character: %c\n", c);
+    printf("ft_printf len = %d\nprintf len = %d\n\n", len1, len2);
+
+    //String
+    len1 = ft_printf("String: %s\n", str);
+    len2 = printf("String: %s\n", str);
+    printf("ft_printf len = %d\nprintf len = %d\n\n", len1, len2);
+
+    //Signed Decimal
+    len1 = ft_printf("Decimal: %d\n", num);
+    len2 = printf("Decimal: %d\n", num);
+    printf("ft_printf len = %d\nprintf len = %d\n\n", len1, len2);
+
+    //Unsigned Integer
+    len1 = ft_printf("Unsigned: %u\n", u_num);
+    len2 = printf("Unsigned: %u\n", u_num);
+    printf("ft_printf len = %d\nprintf len = %d\n\n", len1, len2);
+
+    //Lowercase Hexadecimal
+    len1 = ft_printf("Hex lowercase: %x\n", hex);
+    len2 = printf("Hex lowercase: %x\n", hex);
+    printf("ft_printf len = %d\nprintf len = %d\n\n", len1, len2);
+
+    //Uppercase Hexadecimal
+    len1 = ft_printf("Hex uppercase: %X\n", hex);
+    len2 = printf("Hex uppercase: %X\n", hex);
+    printf("ft_printf len = %d\nprintf len = %d\n\n", len1, len2);
+
+    //Pointer Address
+    len1 = ft_printf("Pointer: %p\n", ptr);
+    len2 = printf("Pointer: %p\n", ptr);
+    printf("ft_printf len = %d\nprintf len = %d\n\n", len1, len2);
+
+    //Percent
+    len1 = ft_printf("Percent: %%\n");
+    len2 = printf("Percent: %%\n");
+    printf("ft_printf len = %d\nprintf len = %d\n\n", len1, len2);
+
+    return (0);
+}*/

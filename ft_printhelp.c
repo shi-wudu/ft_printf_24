@@ -6,7 +6,7 @@
 /*   By: marleand <marleand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 15:32:19 by marleand          #+#    #+#             */
-/*   Updated: 2024/12/11 17:13:50 by marleand         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:24:03 by marleand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_putnbr(int n)
 int	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return (1)
+	return (1);
 }
 
 int	ft_putstr(char *s)

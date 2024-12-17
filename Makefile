@@ -1,4 +1,4 @@
-SRCS			=	
+SRCS			=	ft_hexa.c ft_printfhelp.c ft_printf.c
 
 NAME			=	libftprintf.a
 
@@ -27,4 +27,4 @@ fclean: 	clean
 
 re:			fclean all
 
-.PHONY: all clean fclean re bonus rebonus so
+.PHONY: all clean fclean re
