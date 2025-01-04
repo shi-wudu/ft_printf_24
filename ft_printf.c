@@ -6,13 +6,13 @@
 /*   By: marleand <marleand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 17:07:15 by marleand          #+#    #+#             */
-/*   Updated: 2024/12/17 19:29:23 by marleand         ###   ########.fr       */
+/*   Updated: 2025/01/04 13:54:32 by marleand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int check(const char *str, va_list args)
+static int	check(const char *str, va_list args)
 {
 	if (*str == '%')
 		return (ft_putchar(*str));
@@ -24,23 +24,24 @@ static int check(const char *str, va_list args)
 		return (ft_putnbr(va_arg(args, int)));
 	if (*str == 'u')
 		return (ft_putunsign(va_arg(args, unsigned int)));
- 	if (*str == 'x')
+	if (*str == 'x')
 		return (ft_hexa(va_arg(args, unsigned int), "0123456789abcdef"));
 	if (*str == 'X')
 		return (ft_hexa(va_arg(args, unsigned int), "0123456789ABCDEF"));
-	else if(*str == 'p')
-        return (ft_putstr("0x") + ft_hexa(va_arg(args, unsigned long), "0123456789abcdef"));
+	else if (*str == 'p')
+		return (ft_putstr("0x") + ft_hexa(va_arg(args, unsigned long),
+				"0123456789abcdef"));
 	else
 		return (0);
 }
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	va_list args;
+	va_list	args;
 	int		count;
 
 	count = 0;
-    va_start(args, str);
+	va_start(args, str);
 	while (*str)
 	{
 		if (*str == '%')
@@ -62,7 +63,7 @@ int ft_printf(const char *str, ...)
 /*#include "ft_printf.h"
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
     int     len1, len2;
     char    c = 'A';
