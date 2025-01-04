@@ -6,7 +6,7 @@
 /*   By: marleand <marleand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 16:39:47 by marleand          #+#    #+#             */
-/*   Updated: 2025/01/04 13:59:14 by marleand         ###   ########.fr       */
+/*   Updated: 2025/01/04 18:33:56 by marleand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 # include <stdarg.h>
 # include <stdio.h>
-# include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 int		ft_printf(const char *str, ...);
-int		ft_hexa(unsigned long long n, char *base);
+int		ft_hexa(int flag, unsigned long long n, char *base);
 int		ft_putunsign(unsigned int n);
 int		ft_putstr(char *s);
 int		ft_putchar(char c);

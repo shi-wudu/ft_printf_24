@@ -1,4 +1,4 @@
-SRCS			=	ft_hexa.c ft_printfhelp.c ft_printf.c
+SRCS			=	ft_hexa.c ft_printhelp.c ft_printf.c \
 
 NAME			=	libftprintf.a
 

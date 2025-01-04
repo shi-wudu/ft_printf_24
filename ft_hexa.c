@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hx.c                                            :+:      :+:    :+:   */
+/*   ft_hexa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+        
 	+:+     */
-/*   By: marleand <marleand@student.42.fr>          #+#  +:+      
+/*   By: marleand <marleand@student.42.fr>          +#+  +:+      
 	+#+        */
 /*                                                +#+#+#+#+#+  
 	+#+           */
-/*   Created: 2024-12-11 17:16:55 by marleand          #+#    #+#             */
-/*   Updated: 2024-12-11 17:16:55 by marleand         ###   ########.fr       */
+/*   Created: 2025/01/04 19:31:22 by marleand          #+#    #+#             */
+/*   Updated: 2025/01/04 19:31:22 by marleand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_hexa(unsigned long long n, char *base)
+int	ft_hexa(int flag, unsigned long long n, char *base)
 {
 	char	buffer[16];
 	int		count;
@@ -24,7 +24,9 @@ int	ft_hexa(unsigned long long n, char *base)
 	count = 0;
 	i = 0;
 	if (n == 0)
-		return (ft_putchar(base[0]));
+		return (ft_putstr("(nil)"));
+	if (flag == 1)
+		ft_putstr("0x");
 	while (n > 0)
 	{
 		buffer[i++] = base[n % 16];
@@ -32,5 +34,7 @@ int	ft_hexa(unsigned long long n, char *base)
 	}
 	while (--i >= 0)
 		count += ft_putchar(buffer[i]);
+	if (flag == 1)
+		count = 14;
 	return (count);
 }
