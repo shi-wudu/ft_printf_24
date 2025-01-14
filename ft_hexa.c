@@ -15,7 +15,7 @@
 
 #include "ft_printf.h"
 
-int	ft_hexa(int flag, unsigned long long n, char *base)
+int	ft_hexa(int flag, unsigned long n, char *base)
 {
 	char	buffer[16];
 	int		count;
@@ -23,10 +23,10 @@ int	ft_hexa(int flag, unsigned long long n, char *base)
 
 	count = 0;
 	i = 0;
-	if (n == 0)
+	if (n == 0 && flag == 1)
 		return (ft_putstr("(nil)"));
 	if (flag == 1)
-		ft_putstr("0x");
+		count = ft_putstr("0x");
 	while (n > 0)
 	{
 		buffer[i++] = base[n % 16];
@@ -34,7 +34,5 @@ int	ft_hexa(int flag, unsigned long long n, char *base)
 	}
 	while (--i >= 0)
 		count += ft_putchar(buffer[i]);
-	if (flag == 1)
-		count = 14;
 	return (count);
 }

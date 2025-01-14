@@ -6,7 +6,7 @@
 /*   By: marleand <marleand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 17:07:15 by marleand          #+#    #+#             */
-/*   Updated: 2025/01/04 19:34:09 by marleand         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:43:59 by marleand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-/* #include "ft_printf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 
 int	main(void)
@@ -106,7 +106,11 @@ int	main(void)
     printf("ft_printf len = %d\nprintf len = %d\n\n", len1, len2);
 
     //Pointer Address
-    len1 = ft_printf("Pointer: %p\n", ptr);
+    len1 = ft_printf("Pointer: %p\n", 15);
+    len2 = printf("Pointer: %p\n", (void *)15);
+    printf("ft_printf len = %d\nprintf len = %d\n\n", len1, len2);
+	ptr = NULL;
+	len1 = ft_printf("Pointer: %p\n", ptr);
     len2 = printf("Pointer: %p\n", ptr);
     printf("ft_printf len = %d\nprintf len = %d\n\n", len1, len2);
 
@@ -116,9 +120,9 @@ int	main(void)
     printf("ft_printf len = %d\nprintf len = %d\n\n", len1, len2);
 
     return (0);
-}
+} 
 
-int	main(void)
+/* int	main(void)
 {
 	ft_printf("%d \n", ft_printf("ola%%%"));
 	//printf("%d \n", printf("ola%%"));
