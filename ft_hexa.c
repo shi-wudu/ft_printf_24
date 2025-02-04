@@ -27,6 +27,8 @@ int	ft_hexa(int flag, unsigned long n, char *base)
 		return (ft_putstr("(nil)"));
 	if (flag == 1)
 		count = ft_putstr("0x");
+	if (flag == 0 && n == 0)
+		buffer[i++] = base[n % 16];
 	while (n > 0)
 	{
 		buffer[i++] = base[n % 16];
